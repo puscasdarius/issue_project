@@ -1,0 +1,86 @@
+{{>header}}
+<div id="dialog" title="Basic dialog">
+</div>
+
+<div class="panel">
+  <div class="first_page">
+    <ul class="list-group">
+      {{#if issue_list}}
+        {{#each issue_list}}
+          <li class="list-group-item list_elem" onclick="issue_select()">
+            <label>Name:{{name}}</label><hr/>
+            <label>Description:{{description}}</label><hr/>
+            <label>Issue Type:{{type}}</label><hr/>
+            <label>Issue Sprint:{{sprint}}</label><hr/>
+            <label>Creeate By:{{createdBy}}</label><hr/>
+          </li>
+        {{/each}}
+      {{/if}}
+    </ul>
+  </div>
+  <div class="second_page">
+    {{#if sprint_version}}
+      {{sprint_version}}
+    {{else}}
+      None
+    {{/if}}
+    <div class="select_zone col-lg-3">
+      <div class="issue_version">
+        <label for="issue_version">Project Version</label>
+        <select class="custom-select" id="issue_version">
+        </select>
+      </div>
+      <div>
+        <label for="issue_type">Issue Type</label>
+        <select class="custom-select" id="issue_type">
+          <option value="Feature">Feature</option>
+          <option value="Bug">Bug</option>
+          <option value="Task">Task</option>
+        </select>
+      </div>
+      <div >
+        <label for="issue_state">Issue State</label>
+        <select class="custom-select" id="issue_state">
+          <option value="1">New</option>
+          <option value="2">In progress</option>
+          <option value="3">Feedback</option>
+          <option value="4">Rework</option>
+          <option value="5">Resolved</option>
+          <option value="6">Ready for Testing</option>
+        </select>
+      </div>
+  </div>
+
+  <form id="issue_form" class="col-lg-7 panel">
+    <h4></h4></br>
+   <div class="form-group">
+     <label for="input_name">Issue Name</label>
+     <input type="text" class="form-control" id="input_name">
+   </div>
+   <div class="form-group">
+     <label for="input_des">Issue Description</label>
+     <textarea type="text" class="form-control" id="input_des" rows="4" cols="50"></textarea>
+   </div>
+   <div class="form-group">
+     <label for="user_name">Submit As</label>
+     <input type="text" class="form-control" id="user_name">
+   </div>
+
+   <button id="new_version" type="button" class="btn btn-primary">New Version</button>
+   <button id="add_issue" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+
+  <ul class="paging disable">
+  <li id="prev">
+    <a  aria-label="Previous">
+      <span aria-hidden="true">&laquo;</span>
+    </a>
+  </li>
+  <li id="next">
+    <a  aria-label="Next">
+      <span aria-hidden="true">&raquo;</span>
+    </a>
+  </li>
+  </ul>
+</div>

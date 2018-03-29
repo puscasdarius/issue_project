@@ -1,0 +1,74 @@
+{{>header}}
+<div class="main_panel col-lg-10">
+
+  <div class="select_project">
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label for="project_name">Project Name</label>
+        <input type="text" id="project_name" class="form-control">
+      </div>
+      <button id="new_project" type="button" class="btn btn-primary">Create New Project</button>
+    </div>
+    <div class="projects_panel col-lg-7">
+      <h4>Project List</h4>
+      {{#if projects}}
+        {{#each projects}}
+          <div class="project_elem" onclick="select_project({{id}})">
+            <h6>{{name}}</h6>
+          </div>
+        {{/each}}
+      {{/if}}
+    </div>
+  </div>
+  <!--
+
+
+  </div>
+
+  </div>
+
+  <ul class="paging disable">
+  <li id="prev">
+    <a  aria-label="Previous">
+      <span aria-hidden="true">&laquo;</span>
+    </a>
+  </li>
+  <li id="next">
+    <a  aria-label="Next">
+      <span aria-hidden="true">&raquo;</span>
+    </a>
+  </li>
+  </ul>
+  </nav>
+
+  Second Panel
+
+  <div class="second_panel">
+
+  <div class="s_select_zone">
+    <label for="s_issue_state">Issue State</label>
+    <select class="custom-select" id="s_issue_state">
+      <option value="1">New</option>
+      <option value="2">In progress</option>
+      <option value="3">Feedback</option>
+      <option value="4">Rework</option>
+      <option value="5">Resolved</option>
+      <option value="6">Ready for Testing</option>
+    </select>
+  </div>
+
+  <form id="s_issue_form" class="col-lg-10 panel">
+   <div class="form-group">
+     <label for="s_input_name">Issue Name</label>
+     <input type="text" class="form-control" id="s_input_name">
+   </div>
+   <div class="form-group">
+     <label for="s_input_des">Issue Description</label>
+     <textarea type="text" class="form-control" id="s_input_des" rows="4" cols="50"></textarea>
+   </div>
+
+   <button id="s_add_subtask"type="button" class="btn btn-primary">Add Subtask</button>
+  </form>
+  </div>
+
+  -->
